@@ -47,30 +47,22 @@ int main()
 
 void calculateGPA()
 {
-//    Gpa Calculation Code 
-        int n;
-        float totalCredits = 0, totalPoints = 0;
-
-        cout<<"Enter number of subjects: "<<endl;
-        cin>>n;
-        
-        for (int i = 0; i < n; i++) {
-                float grade, credit;
-                cout<<"Enter grade and credit for subject: "<<(i+1)<<endl;
-                cin>>grade>>credit;
-                totalPoints += grade * credit;
-                totalCredits += credit;
-        }  
-// Evaluating Gpa 
-        int Gpa =0;
-         if((totalPoints/totalCredits)>95){Gpa = 10; }
-         else if ((totalPoints/totalCredits)>85){Gpa = 9;}
-         else if ((totalPoints/totalCredits)>75){Gpa = 8;}
-         else if ((totalPoints/totalCredits)>65){Gpa = 7;}
-         else if ((totalPoints/totalCredits)>55){Gpa = 6;}
-         else {Gpa = totalPoints/totalCredits;}
-// Printing Gpa
-    cout<<"\n\n\nTotal Points: "<<totalPoints<<" . Total Credits: "<<totalCredits<<" .Total GPA: "<<Gpa<<" ."<<endl;
+int numSub;
+    float tPoints=0.0,tCredits=0.0;
+    cout<<"Enter No. of subjects: ",cin>>numSub;
+    int credit[numSub];
+    float GradePoint[numSub];
+    for(int i=0; i<numSub; i++){
+        cout << "Enter credits for subject " << i + 1 << ": ";
+        cin >> credit[i];
+        cout << "Enter grade points for subject " << i + 1 << ": ";
+        cin >> GradePoint[i];
+        tPoints +=(credit[i] * GradePoint[i]);
+        tCredits += credit[i];
+    }
+    float gpa = (tCredits == 0) ? 0 : tPoints / tCredits;
+    
+    cout<<"\n\n\nTotal Points: "<<tPoints<<" . Total Credits: "<<tCredits<<" .Total GPA: "<<gpa<<" ."<<endl;
 
 
     sub:
@@ -104,29 +96,22 @@ void calculateCGPA()
     cout<<"-------------- CGPA Calculating -----------------\n\n"<<endl;
     cout<<"Please implement calculate CGPA and your output should be as follows"<<endl;
     
-        //    CGpa Calculation Code 
-                int n;
-                float totalCredits = 0, totalPoints = 0;
-
-                cout<<"Enter number of Semesters: "<<endl;
-                cin>>n;
-                for (int i = 0; i < n; i++) {
-                        float grade, credit;
-                        cout<<"Enter grade and credit for Semester: "<<(i+1)<<endl;
-                        cin>>grade>>credit;
-                        totalPoints += grade * credit;
-                        totalCredits += credit;
-                }  
-        // Evaluating CGpa 
-                int CGpa =0;
-                if((totalPoints/totalCredits)>95){CGpa = 10; }
-                else if ((totalPoints/totalCredits)>85){CGpa = 9;}
-                else if ((totalPoints/totalCredits)>75){CGpa = 8;}
-                else if ((totalPoints/totalCredits)>65){CGpa = 7;}
-                else if ((totalPoints/totalCredits)>55){CGpa = 6;}
-                else {CGpa = totalPoints/totalCredits;}
-        // Printing CGpa
-        cout<<"\n\n\n Your CGPA is : "<<CGpa<<" ."<<endl;
+        int Semesters;
+        float totalPoints=0.0,totalCredits=0.0;
+        cout<<"Enter No. of Semesters: ",cin>>Semesters;
+        int credit[Semesters];
+        float GradePoint[Semesters];
+        for(int i=0; i<Semesters; i++){
+            cout << "Enter credits for Semesters " << i + 1 << ": ";
+            cin >> credit[i];
+            cout << "Enter grade points for Semesters " << i + 1 << ": ";
+            cin >> GradePoint[i];
+            totalPoints +=(credit[i] * GradePoint[i]);
+            totalCredits += credit[i];
+        }
+        float gpa = (totalCredits == 0) ? 0 : totalPoints / totalCredits;
+    
+    cout<<"\n\n\nTotal Points: "<<totalPoints<<" . Total Credits: "<<totalCredits<<" .Total GPA: "<<gpa<<" ."<<endl;
 
 
 
