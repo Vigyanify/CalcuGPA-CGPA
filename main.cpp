@@ -48,6 +48,7 @@ int main()
 void calculateGPA()
 {
 int numSub;
+
     float tPoints=0.0,tCredits=0.0;
     cout<<"Enter No. of subjects: ",cin>>numSub;
     int credit[numSub];
